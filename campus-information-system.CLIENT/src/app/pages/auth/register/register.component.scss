@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.5rem;
+  height: 70px;
+}
+
+.logo {
+  height: 130px;
+}
+
+.institute-info h1 {
+  color: #b30000;
+  margin: 0;
+}
+
+.institute-info p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.login-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+.login-box {
+  width: 50%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #fff;
+}
+
+.logo {
+  text-align: center;
+  margin-top: 5px;
+}
+
+.logo img {
+  width: 80px;
+}
+
+.logo h1 {
+  font-size: 24px;
+  color: #8b0000;
+}
+
+.logo p {
+  font-size: 14px;
+  color: #555;
+}
+
+.login-form {
+  text-align: center;
+}
+
+.login-form h2 {
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.login-form span {
+  color: #8b0000;
+  font-weight: bold;
+}
+
+.login-form p {
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+label {
+  text-align: left;
+  font-size: 14px;
+  color: #333;
+}
+
+input {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.password-field {
+  position: relative;
+}
+
+.password-field input {
+  width: 100%;
+  padding-right: 30px;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.register-here{
+  color: #8b0000;
+}
+
+button {
+  background: #8b0000;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #a00000;
+}
+
+.links {
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.links a {
+  color: #555;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+/* Updated image-section gamit ang CSS background */
+.image-section {
+  width: 50%;
+  background-image: url('/assets/images/bansud-institute-background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

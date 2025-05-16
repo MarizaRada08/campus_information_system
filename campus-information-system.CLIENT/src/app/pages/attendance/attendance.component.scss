@@ -1,0 +1,272 @@
+// Variables
+$primary-color: #890106;
+$present-color: #16a34a;
+$present-bg: #dcfce7;
+$late-color: #ca8a04;
+$late-bg: #fefce8;
+$absent-color: #dc2626;
+$absent-bg: #fef2f2;
+$border-color: #e5e7eb;
+$text-color: #000000;
+$text-secondary: #6b7280;
+$bg-color: #ffffff;
+$bg-secondary: #f9fafb;
+
+// Global styles
+:host {
+  display: block;
+  min-height: 100vh;
+  background-color: $bg-color;
+  font-family: 'Arial', sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.card {
+  background-color: $bg-color;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+// Navigation styles
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.nav-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.page-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.search-container {
+  position: relative;
+}
+
+.search-input {
+  padding: 0.5rem 0.75rem 0.5rem 2.5rem;
+  border: 1px solid $border-color;
+  border-radius: 0.375rem;
+  background-color: $bg-secondary;
+  width: 16rem;
+  
+  &::placeholder {
+    color: $text-secondary;
+  }
+  
+  &:focus {
+    outline: none;
+    border-color: $primary-color;
+  }
+}
+
+// Main content styles
+.main-content {
+  padding: 1.5rem 1rem;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.subsection-title {
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+// Attendance Overview styles
+.overview-card {
+  margin-bottom: 1.5rem;
+}
+
+.status-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.status-card {
+  border-radius: 0.5rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  &.present-card {
+    background-color: $present-bg;
+  }
+  
+  &.late-card {
+    background-color: $late-bg;
+  }
+  
+  &.absent-card {
+    background-color: $absent-bg;
+  }
+}
+
+.status-icon-container {
+  
+  border-radius: 50%;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.status-percentage {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+// Monthly Overview styles
+.monthly-overview {
+  border: 1px solid $border-color;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.attendance-rate {
+  margin-bottom: 0.5rem;
+}
+
+.rate-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
+  
+  .rate-label, .rate-value {
+    font-size: 0.875rem;
+  }
+  
+  .rate-label {
+    color: $text-secondary;
+  }
+  
+  .rate-value {
+    font-weight: 500;
+  }
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 0.625rem;
+  background-color: #e5e7eb;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: $primary-color;
+  border-radius: 9999px;
+}
+
+.attendance-summary {
+  font-size: 0.875rem;
+  color: $text-secondary;
+}
+
+// Recent Attendance styles
+.recent-attendance-card {
+  height: 100%;
+}
+
+.attendance-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.attendance-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.attendance-details {
+  .attendance-date {
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+  }
+  
+  .attendance-time {
+    font-size: 0.875rem;
+    color: $text-secondary;
+  }
+}
+
+.status-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+}
+
+// Icons (you would need to include an icon font or SVG icons)
+// This is a placeholder for icon styles
+[class^="icon-"] {
+  font-size: 1.5rem;
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.icon-check::before {
+  content: "✓";
+}
+
+.icon-clock::before {
+  content: "⏱";
+}
+
+.icon-x::before {
+  content: "✕";
+}
+
+.icon-chevron-left::before {
+  content: "←";
+}
+
+.icon-search::before {
+  content: "🔍";
+}
+
+.icon-bell::before {
+  content: "🔔";
+}
+
+.icon-menu::before {
+  content: "☰";
+}

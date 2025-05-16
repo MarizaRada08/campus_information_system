@@ -1,0 +1,28 @@
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+<header class="header" *ngIf="isLoggedIn">
+  <img src="assets/images/bansud-institute-logo.png" alt="Bansud Institute Logo" class="logo" />
+  <div class="institute-info">
+    <h1>BANSUD INSTITUTE, INC.</h1>
+    <p>Poblacion, Bansud, Oriental Mindoro</p>
+  </div>
+
+  <div class="icon-container">
+    <!-- Notification Bell Icon -->
+    <div class="notification-icon">
+      <i class="fas fa-bell"  (click)="goToNotifications()"></i>
+    </div>
+  </div>
+  <div class="menu-icon" (click)="toggleMenu()">☰</div>
+  <div class="menu" *ngIf="menuOpen">
+    <a href="pages/dashboard"><button>Dashboard</button></a>
+    <a href="pages/profile"><button>My Profile</button></a>
+    <a href="pages/schedule"><button>Schedule</button></a>
+    <a href="pages/attendance"><button>Attendance</button></a>
+    <a href="pages/libraries"><button>Libraries</button></a>
+    <a href="pages/grades"><button>Grade Report</button></a>
+    <a  (click)="logout()"><button>Logout</button></a>
+  </div>
+</header>

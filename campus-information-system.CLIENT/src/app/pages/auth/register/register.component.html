@@ -1,0 +1,39 @@
+<header class="header">
+    <img src="assets/images/bansud-institute-logo.png" alt="Bansud Institute Logo" class="logo" />
+    <div class="institute-info">
+      <h1>BANSUD INSTITUTE, INC.</h1>
+      <p>Poblacion, Bansud, Oriental Mindoro</p>
+    </div>
+  </header>
+
+<div class="login-container">
+    <div class="login-box">
+        <div class="login-form">
+            <h2>Welcome to <br>
+                <span>Bansud Institute</span>
+            </h2>
+            <p>Student Portal</p>
+  
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" formControlName="email" required />
+  
+                <label for="password">Password</label>
+                <div class="password-field">
+                    <input type="password" id="password" placeholder="Enter your password" formControlName="password" required />
+                    <span class="toggle-password"></span>
+                </div>
+  
+                <button type="submit">Register</button>
+            </form>
+            <br>
+            <p class="register-link">
+                Already have an account?  
+                <a href="auth/login" class="register-here">Login here</a>
+            </p>
+        </div>
+    </div>
+  
+    <div class="image-section"></div>
+  </div>
+  

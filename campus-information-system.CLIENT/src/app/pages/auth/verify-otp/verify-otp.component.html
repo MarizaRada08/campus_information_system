@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="left-section">
+      <h2>OTP Verification</h2>
+      <p>We have sent the OTP (One Time Password) to your Email Address</p>
+      <form [formGroup]="verifyOtpForm" (ngSubmit)="onSubmit()">
+        <input type="text" class="otp-input"  formControlName="otp" placeholder="Enter OTP" maxlength="6" >
+        
+        <button class="btn" type="submit">Verify</button>
+
+         <p class="resend-text">
+              Didn’t receive code?
+              <a 
+              (click)="resendOTP()"
+              [class.disabled]="resendCooldown > 0 || isResending"
+              [style.pointerEvents]="resendCooldown > 0 || isResending ? 'none' : 'auto'"
+              class="resend-link">{{ resendCooldown > 0 ? 'Resend again in ' + minutes + ':' + (seconds < 10 ? '0' + seconds : seconds) : 'Resend again' }}</a>
+            </p>
+      </form>
+  </div>
+  <div class="right-section"></div>
+</div>

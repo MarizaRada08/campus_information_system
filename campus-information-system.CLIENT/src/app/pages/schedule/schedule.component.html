@@ -1,0 +1,80 @@
+<div class="schedule-container">
+  <!-- Back Button -->
+  <div class="back-button-container">
+    <a href="#" class="back-button">
+      <i class="fas fa-chevron-left"></i>
+      <span>Schedule</span>
+    </a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Calendar -->
+    <div class="calendar-container">
+      <div class="calendar-header">
+        <button class="nav-button" (click)="previousMonth()">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <h2 class="month-year">{{ currentDate | date:'MMMM yyyy' }}</h2>
+        <button class="nav-button" (click)="nextMonth()">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+
+      <div class="calendar-divider"></div>
+
+      <!-- Calendar Days -->
+      <div class="calendar-days">
+        <div class="day-name" *ngFor="let day of weekDays">{{ day }}</div>
+      </div>
+
+      <!-- Calendar Dates -->
+      <div class="calendar-dates">
+        <div 
+          *ngFor="let date of calendarDays" 
+          class="calendar-date" 
+          [ngClass]="{
+            'inactive': !date.isCurrentMonth,
+            'selected': isSelectedDate(date.date),
+            'today': isToday(date.date)
+          }"
+          (click)="selectDate(date.date)">
+          {{ date.day }}
+        </div>
+      </div>
+    </div>
+
+    <!-- Schedule -->
+    <div class="schedule">
+      <div class="schedule-header">
+        <div class="time-header">Time</div>
+        <div class="subject-header">Subject</div>
+      </div>
+
+      <div class="schedule-items" *ngIf="selectedDateSchedule.length > 0; else noSchedule">
+        <div class="schedule-item" *ngFor="let item of selectedDateSchedule">
+          <div class="time-slot">
+            <div class="time-range">{{ item.startTime }} - {{ item.endTime }}</div>
+          </div>
+          <div class="subject-slot">
+            <div class="subject-card" [ngClass]="item.color">
+              <h3 class="subject-name">{{ item.subject }}</h3>
+              <div class="teacher-info">
+                <div class="teacher-avatar">
+                  <img src="assets/placeholder.svg" alt="Teacher">
+                </div>
+                <span class="teacher-name">{{ item.teacher }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <ng-template #noSchedule>
+        <div class="no-schedule">
+          <p>No classes scheduled for this date.</p>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>

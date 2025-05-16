@@ -1,0 +1,118 @@
+<section>
+  <div class="location">
+    <h3><span>BANSUD INSTITUTE, INC.</span></h3>
+    <h4>Poblacion, Bansud, Oriental Mindoro</h4>
+  </div>
+
+  <div class="profile-picture">
+    <h1>Registration Form</h1>
+  </div>
+
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+    <div class="student-status">
+      <div class="status">
+        <h3>Student Status</h3>
+        <select formControlName="StudentStatus" required>
+          <option value="" disabled selected>Select Student Status</option>
+          <option value="Junior HighSchool">Junior HighSchool</option>
+          <option value="Senior HighSchool">Senior HighSchool</option>
+          <option value="Transferee">Transferee</option>
+          <option value="None">None</option>
+        </select>  	
+      </div>
+      <div class="status">
+        <h3>Strand Selection</h3>
+        <select formControlName="Strand" required>
+          <option value="" disabled selected>Select Strand</option>
+          <option value="STEM">Science, Technology, Engineering, and Mathematics (STEM)</option>
+          <option value="ABM">Accountancy, Business, and Management (ABM)</option>
+          <option value="HUMSS">Humanities and Social Sciences (HUMSS)</option>
+          <option value="None">None</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="fill-info">
+      <div class="fill">
+        <div class="info">
+          <label>Email</label>
+          <input type="email" placeholder="Enter Email" formControlName="Email" required>
+        </div>
+      </div>
+
+      <div class="fill">
+        <div class="info">
+          <label>Last Name</label>
+          <input type="text" placeholder="Enter Last Name" formControlName="LastName" required>
+        </div>
+        <div class="info">
+          <label>First Name</label>
+          <input type="text" placeholder="Enter First Name" formControlName="FirstName" required>
+        </div>
+      </div>
+
+      <div class="fill">
+        <div class="info">
+          <label>Middle Name</label>
+          <input type="text" placeholder="Enter Middle Name" formControlName="MiddleName">
+        </div>
+        <div class="info">
+          <label>Address</label>
+          <input type="text" placeholder="Enter Address" formControlName="Address" required>
+        </div>
+      </div>
+
+      <div class="fill">
+        <div class="info">
+          <label>Contact Number</label>
+          <input type="text" placeholder="Enter Contact Number" formControlName="ContactNumber" required>
+        </div>
+        <div class="info">
+          <label>Date of Birth</label>
+          <input type="date" formControlName="DateOfBirth" required>
+        </div>
+      </div>
+
+      <div class="fill">
+        <div class="info">
+          <label>Age</label>
+          <input type="number" placeholder="Enter Age" formControlName="Age" required>
+        </div>
+        <div class="info">
+          <label>Gender</label>
+          <select formControlName="Gender" required>
+            <option value="" disabled selected>Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>        
+      </div>
+
+      <div class="fill">
+        <div class="info">
+          <label>Grade Level</label>
+          <input type="text" placeholder="Enter Grade Level" formControlName="GradeLevel" required>
+        </div>
+        <div class="info">
+          <label>Section</label>
+          <input type="text" placeholder="Enter Section" formControlName="Section" required>
+        </div>
+      </div>
+
+      <div class="fill">
+        <div class="info">
+          <label>Guardian's Name</label>
+          <input type="text" placeholder="Enter Guardian's Name" formControlName="GuardianName" required>
+        </div>
+        <div class="info">
+          <label>Guardian's Contact</label>
+          <input type="text" placeholder="Enter Guardian's Contact" formControlName="GuardianContact" required>
+        </div>
+      </div>
+
+      <div class="submit">
+        <button type="submit" >Submit</button>
+      </div>
+    </div>
+  </form>
+</section>

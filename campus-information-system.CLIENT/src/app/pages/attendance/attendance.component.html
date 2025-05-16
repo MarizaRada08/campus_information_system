@@ -1,0 +1,131 @@
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+<!-- Navigation and Search -->
+<div class="container nav-container">
+  <div class="nav-title">
+    <button class="icon-button">
+      <i class="icon-chevron-left"></i>
+    </button>
+    <h2 class="page-title">Attendance</h2>
+  </div>
+  <div class="search-container">
+    <span class="material-symbols-outlined" style="position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;">
+      search
+      </span>
+    <input type="text" placeholder="Search" class="search-input" />
+  </div>
+</div>
+
+<!-- Main Content -->
+<main class="container main-content">
+  <div class="content-grid">
+    <!-- Left Column - Attendance Overview and Monthly Overview -->
+    <div class="left-column">
+      <div class="card overview-card">
+        <h3 class="section-title">Attendance Overview</h3>
+
+        <div class="status-cards">
+          <!-- Present Card -->
+          <div class="status-card present-card">
+            <div class="status-icon-container">
+              <span class="material-symbols-outlined" style="color: #16A34A;">
+                task_alt
+                </span>
+            </div>
+            <span class="status-percentage">92%</span>
+            <span class="status-label present-label">Present</span>
+          </div>
+
+          <!-- Late Card -->
+          <div class="status-card late-card">
+            <div class="status-icon-container">
+              <span class="material-symbols-outlined" style="color: #CA8A04;">
+                schedule
+                </span>
+            </div>
+            <span class="status-percentage">6%</span>
+            <span class="status-label late-label">Late</span>
+          </div>
+
+          <!-- Absent Card -->
+          <div class="status-card absent-card">
+            <div class="status-icon-container">
+              <span class="material-symbols-outlined" style="color: #DC2626;">
+                error
+                </span>
+            </div>
+            <span class="status-percentage">2%</span>
+            <span class="status-label absent-label">Absent</span>
+          </div>
+        </div>
+
+        <!-- Monthly Overview -->
+        <div class="monthly-overview">
+          <h4 class="subsection-title">Monthly Overview</h4>
+
+          <div class="attendance-rate">
+            <div class="rate-header">
+              <span class="rate-label">Attendance Rate</span>
+              <span class="rate-value">90%</span>
+            </div>
+            <div class="progress-bar-container">
+              <div class="progress-bar" style="width: 90%"></div>
+            </div>
+          </div>
+
+          <p class="attendance-summary">
+            <span class="bold">18</span> days present out of <span class="bold">20</span> school days
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column - Recent Attendance -->
+    <div class="right-column">
+      <div class="card recent-attendance-card">
+        <h3 class="section-title">Recent Attendance</h3>
+
+        <div class="attendance-list">
+          <!-- February 27 -->
+          <div class="attendance-item">
+            <div class="attendance-details">
+              <h5 class="attendance-date">February 27, 2024</h5>
+              <p class="attendance-time">7:30 AM</p>
+            </div>
+            <span class="status-badge present-badge">Present</span>
+          </div>
+
+          <!-- February 26 -->
+          <div class="attendance-item">
+            <div class="attendance-details">
+              <h5 class="attendance-date">February 26, 2024</h5>
+              <p class="attendance-time">7:25 AM</p>
+            </div>
+            <span class="status-badge present-badge">Present</span>
+          </div>
+
+          <!-- February 23 -->
+          <div class="attendance-item">
+            <div class="attendance-details">
+              <h5 class="attendance-date">February 23, 2024</h5>
+              <p class="attendance-time">7:45 AM</p>
+            </div>
+            <span class="status-badge late-badge">Late</span>
+          </div>
+
+          <!-- February 22 -->
+          <div class="attendance-item">
+            <div class="attendance-details">
+              <h5 class="attendance-date">February 22, 2024</h5>
+              <p class="attendance-time">7:28 AM</p>
+            </div>
+            <span class="status-badge present-badge">Present</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

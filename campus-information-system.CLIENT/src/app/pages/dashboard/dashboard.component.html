@@ -1,0 +1,84 @@
+<section>
+  <div class="dashboard-section">
+    <div class="container">
+      <div class="one">
+        <h1>Welcome</h1>
+        <div class="card">
+          <div class="btn">
+            <div class="button">
+              <div class="top">
+                <span>Today's Schedule</span>
+                <h2>5 Classes</h2>
+              </div>
+              <div class="center">
+                <i class="fa fa-calendar"></i>
+              </div>
+            </div>
+            <div class="button">
+              <div class="top">
+                <span>Attendance Rate</span>
+                <h2>95%</h2>
+              </div>
+              <div class="center">
+                <i class="fa-solid fa-user-group"></i>
+              </div>
+            </div>
+          </div>
+          <div class="btn">
+            <div class="button">
+              <div class="top">
+                <span>Upcoming Quiz</span>
+                <h2>Math-Fri</h2>
+              </div>
+              <div class="center">
+                <i class="fa-solid fa-clock"></i>
+              </div>
+            </div>
+            <div class="button">
+              <div class="top">
+                <span>Announcements</span>
+                <h2>2 new</h2>
+              </div>
+              <div class="center">
+                <i class="fa fa-bell"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="calendar">
+        <div class="width">
+          <div>
+            <button (click)="prevMonth()">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+          </div>
+          <h2>{{ monthNames[currentMonth] }} {{ currentYear }}</h2>
+          <div>
+            <button (click)="nextMonth()">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+        <div class="table">
+          <table>
+            <thead>
+              <tr>
+                <th *ngFor="let day of weekDays">{{ day }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let week of calendar">
+                <td *ngFor="let date of week" [class.today]="isToday(date)">
+    {{ date || '' }}
+  </td>
+  
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>

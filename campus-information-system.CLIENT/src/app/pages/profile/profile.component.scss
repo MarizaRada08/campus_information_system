@@ -1,0 +1,112 @@
+.dashboard-container {
+  font-family: 'Segoe UI', sans-serif;
+  padding: 1rem;
+  color: #333;
+}
+
+.profile-section {
+  padding: 20px 0;
+}
+
+.profile-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.profile-name h3 {
+  margin: 0;
+}
+
+.profile-name p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9em;
+}
+
+form {
+  width: 100%;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+h4 {
+  color: #b30000;
+  margin-top: 30px;
+}
+
+
+  /* ✅ Snackbar styles */
+  .snackbar {
+      visibility: hidden;
+      opacity: 0;
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #333;
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: opacity 0.3s ease, bottom 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 2000;
+    }
+    
+    .snackbar.show {
+      visibility: visible;
+      opacity: 1;
+      bottom: 50px;
+    }
+    
+    .close-btn {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
