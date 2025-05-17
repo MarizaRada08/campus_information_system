@@ -95,7 +95,6 @@ export const Main = async () => {
   logging.log("----------------------------------------");
   logging.log("Define Routing Error");
   logging.log("----------------------------------------");
-  application.use(routeNotFound)
 
   logging.log("----------------------------------------");
   logging.log("Starting Server");
