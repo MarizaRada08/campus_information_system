@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.5rem;
+    height: 70px;
+  }
+  
+  .logo {
+    height: 130px;
+  }
+  
+  .institute-info h1 {
+    color: #b30000;
+    margin: 0;
+  }
+  
+  .institute-info p {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+  
+  .login-container {
+    display: flex;
+    width: 99vw;
+    height: 95vh;
+  }
+  
+  .login-box {
+    width: 50%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #fff;
+  }
+  
+  .logo {
+    text-align: center;
+    margin-top: 5px;
+  }
+  
+  .logo img {
+    width: 80px;
+  }
+  
+  .logo h1 {
+    font-size: 24px;
+    color: #8b0000;
+  }
+  
+  .logo p {
+    font-size: 14px;
+    color: #555;
+  }
+
+  .welcome{
+    text-align: center;
+    margin-bottom: 5px;
+  }
+
+  .highlight {
+    color: #a71d2a;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .level-btn {
+    display: block;
+    margin: 12px auto;
+    background-color: #a71d2a;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
+    margin-top: 20px;
+  }
+  
+  .level-btn:hover {
+    transform: scale(1.05);
+  }
+  
+  
+  /* Updated image-section gamit ang CSS background */
+  .image-section {
+    width: 50%;
+    background-image: url('/assets/images/bansud-institute-background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
