@@ -1,5 +1,5 @@
 export const environment = {
     env: 'prod',
-    apiUrl: 'https://jsonplaceholder.typicode.com',
+    apiUrl: 'https://campus-information-system.onrender.com',
     api: 'http://localhost:3000',
 };

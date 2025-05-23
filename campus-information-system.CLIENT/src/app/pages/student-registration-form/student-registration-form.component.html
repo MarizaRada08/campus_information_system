@@ -12,23 +12,29 @@
     <div class="student-status">
       <div class="status">
         <h3>Student Status</h3>
-        <select formControlName="StudentStatus" required>
+        <select formControlName="StudentStatus">
           <option value="" disabled selected>Select Student Status</option>
           <option value="Junior HighSchool">Junior HighSchool</option>
           <option value="Senior HighSchool">Senior HighSchool</option>
           <option value="Transferee">Transferee</option>
           <option value="None">None</option>
-        </select>  	
+        </select>
+        <div class="error" *ngIf="registrationForm.get('StudentStatus')?.touched && registrationForm.get('StudentStatus')?.invalid">
+          <small>Student Status is required.</small>
+        </div>
       </div>
       <div class="status">
         <h3>Strand Selection</h3>
-        <select formControlName="Strand" required>
+        <select formControlName="Strand">
           <option value="" disabled selected>Select Strand</option>
           <option value="STEM">Science, Technology, Engineering, and Mathematics (STEM)</option>
           <option value="ABM">Accountancy, Business, and Management (ABM)</option>
           <option value="HUMSS">Humanities and Social Sciences (HUMSS)</option>
           <option value="None">None</option>
         </select>
+        <div class="error" *ngIf="registrationForm.get('Strand')?.touched && registrationForm.get('Strand')?.invalid">
+          <small>Strand is required.</small>
+        </div>
       </div>
     </div>
 
@@ -36,18 +42,28 @@
       <div class="fill">
         <div class="info">
           <label>Email</label>
-          <input type="email" placeholder="Enter Email" formControlName="Email" required>
+          <input type="email" placeholder="Enter Email" formControlName="Email">
+          <div class="error" *ngIf="registrationForm.get('Email')?.touched && registrationForm.get('Email')?.invalid">
+            <small *ngIf="registrationForm.get('Email')?.errors?.['required']">Email is required.</small>
+            <small *ngIf="registrationForm.get('Email')?.errors?.['email']">Enter a valid email.</small>
+          </div>
         </div>
       </div>
 
       <div class="fill">
         <div class="info">
           <label>Last Name</label>
-          <input type="text" placeholder="Enter Last Name" formControlName="LastName" required>
+          <input type="text" placeholder="Enter Last Name" formControlName="LastName">
+          <div class="error" *ngIf="registrationForm.get('LastName')?.touched && registrationForm.get('LastName')?.invalid">
+            <small>Last Name is required.</small>
+          </div>
         </div>
         <div class="info">
           <label>First Name</label>
-          <input type="text" placeholder="Enter First Name" formControlName="FirstName" required>
+          <input type="text" placeholder="Enter First Name" formControlName="FirstName">
+          <div class="error" *ngIf="registrationForm.get('FirstName')?.touched && registrationForm.get('FirstName')?.invalid">
+            <small>First Name is required.</small>
+          </div>
         </div>
       </div>
 
@@ -58,60 +74,87 @@
         </div>
         <div class="info">
           <label>Address</label>
-          <input type="text" placeholder="Enter Address" formControlName="Address" required>
+          <input type="text" placeholder="Enter Address" formControlName="Address">
+          <div class="error" *ngIf="registrationForm.get('Address')?.touched && registrationForm.get('Address')?.invalid">
+            <small>Address is required.</small>
+          </div>
         </div>
       </div>
 
       <div class="fill">
         <div class="info">
           <label>Contact Number</label>
-          <input type="text" placeholder="Enter Contact Number" formControlName="ContactNumber" required>
+          <input type="text" placeholder="Enter Contact Number" formControlName="ContactNumber">
+          <div class="error" *ngIf="registrationForm.get('ContactNumber')?.touched && registrationForm.get('ContactNumber')?.invalid">
+            <small>Contact Number is required.</small>
+          </div>
         </div>
         <div class="info">
           <label>Date of Birth</label>
-          <input type="date" formControlName="DateOfBirth" required>
+          <input type="date" formControlName="DateOfBirth">
+          <div class="error" *ngIf="registrationForm.get('DateOfBirth')?.touched && registrationForm.get('DateOfBirth')?.invalid">
+            <small>Date of Birth is required.</small>
+          </div>
         </div>
       </div>
 
       <div class="fill">
         <div class="info">
           <label>Age</label>
-          <input type="number" placeholder="Enter Age" formControlName="Age" required>
+          <input type="number" placeholder="Enter Age" formControlName="Age">
+          <div class="error" *ngIf="registrationForm.get('Age')?.touched && registrationForm.get('Age')?.invalid">
+            <small>Age is required.</small>
+          </div>
         </div>
         <div class="info">
           <label>Gender</label>
-          <select formControlName="Gender" required>
+          <select formControlName="Gender">
             <option value="" disabled selected>Select Gender</option>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
           </select>
-        </div>        
+          <div class="error" *ngIf="registrationForm.get('Gender')?.touched && registrationForm.get('Gender')?.invalid">
+            <small>Gender is required.</small>
+          </div>
+        </div>
       </div>
 
       <div class="fill">
         <div class="info">
           <label>Grade Level</label>
-          <input type="text" placeholder="Enter Grade Level" formControlName="GradeLevel" required>
+          <input type="text" placeholder="Enter Grade Level" formControlName="GradeLevel">
+          <div class="error" *ngIf="registrationForm.get('GradeLevel')?.touched && registrationForm.get('GradeLevel')?.invalid">
+            <small>Grade Level is required.</small>
+          </div>
         </div>
         <div class="info">
           <label>Section</label>
-          <input type="text" placeholder="Enter Section" formControlName="Section" required>
+          <input type="text" placeholder="Enter Section" formControlName="Section">
+          <div class="error" *ngIf="registrationForm.get('Section')?.touched && registrationForm.get('Section')?.invalid">
+            <small>Section is required.</small>
+          </div>
         </div>
       </div>
 
       <div class="fill">
         <div class="info">
           <label>Guardian's Name</label>
-          <input type="text" placeholder="Enter Guardian's Name" formControlName="GuardianName" required>
+          <input type="text" placeholder="Enter Guardian's Name" formControlName="GuardianName">
+          <div class="error" *ngIf="registrationForm.get('GuardianName')?.touched && registrationForm.get('GuardianName')?.invalid">
+            <small>Guardian's Name is required.</small>
+          </div>
         </div>
         <div class="info">
           <label>Guardian's Contact</label>
-          <input type="text" placeholder="Enter Guardian's Contact" formControlName="GuardianContact" required>
+          <input type="text" placeholder="Enter Guardian's Contact" formControlName="GuardianContact">
+          <div class="error" *ngIf="registrationForm.get('GuardianContact')?.touched && registrationForm.get('GuardianContact')?.invalid">
+            <small>Guardian's Contact is required.</small>
+          </div>
         </div>
       </div>
 
       <div class="submit">
-        <button type="submit" >Submit</button>
+        <button type="submit">Submit</button>
       </div>
     </div>
   </form>

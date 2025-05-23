@@ -1,28 +1,23 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { StudentService } from 'src/app/core/services/student.service';
+import { IStudent } from 'src/app/core/interfaces/studentInterface';
 
 @Component({
   selector: 'app-profile',
+  standalone: true,
   imports: [CommonModule],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.scss'
 })
-export class ProfileComponent {
-    
-  snackbarVisible = false;
-  snackbarMessage = '';
-  menuOpen = false;
+export class ProfileComponent implements OnInit {
+  student: IStudent | null = null;
 
-  toggleMenu() {
-    this.menuOpen = !this.menuOpen;
-  }
+  constructor(private studentService: StudentService) {}
 
-  showSnackbar(message: string) {
-    this.snackbarMessage = `${message} clicked`;
-    this.snackbarVisible = true;
-  }
-
-  closeSnackbar() {
-    this.snackbarVisible = false;
+  ngOnInit(): void {
+    this.studentService.getStudents().subscribe((students) => {
+      this.student = students[0]; // Get first student or logic as needed
+    });
   }
 }

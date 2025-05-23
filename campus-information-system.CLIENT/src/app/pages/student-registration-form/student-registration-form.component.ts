@@ -37,19 +37,20 @@ export class StudentRegistrationFormComponent {
   }
 
   onSubmit() {
-    if (this.registrationForm.valid) {
-      this.studentService.addStudent(this.registrationForm.value).subscribe({
-        next: (res) => {
-          console.log('Student added:', res);
-          this.registrationForm.reset();
-  
-          // ✅ Navigate after success
-          this.router.navigate(['pages/dashboard']); // palitan mo ng desired route
-        },
-        error: (err) => {
-          console.error('Error adding student:', err);
-        }
-      });
+    if (this.registrationForm.invalid) {
+      this.registrationForm.markAllAsTouched(); // <-- mark all fields as touched to show errors
+      return;
     }
+
+    this.studentService.addStudent(this.registrationForm.value).subscribe({
+      next: (res) => {
+        console.log('Student added:', res);
+        this.registrationForm.reset();
+        this.router.navigate(['pages/dashboard']); 
+      },
+      error: (err) => {
+        console.error('Error adding student:', err);
+      }
+    });
   }
 }

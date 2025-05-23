@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class StudentService {
   private readonly _httpClient = inject(HttpClient);
-  private readonly _endpoint = `${environment.api}/api/v1/student`;
+  private readonly _endpoint = `${environment.apiUrl}/api/v1/student`;
 
   constructor() { }
 
