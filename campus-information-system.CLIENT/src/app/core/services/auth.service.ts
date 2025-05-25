@@ -44,7 +44,7 @@ export class AuthService {
 
   login(payload: IAuthPayload): Observable<IAuthResponse> {
     return this._httpClient.post<IAuthResponse>(
-      `${environment.apiUrl}/login`, payload
+      `${environment.api}/login`, payload
     ).pipe(
       tap((response: IAuthResponse) => {
         this._userService.setUser(response.user);
@@ -60,7 +60,7 @@ export class AuthService {
 
   register(payload: IAuthPayload): Observable<{ message: string }> {
     return this._httpClient.post<{ message: string }>(
-      `${environment.apiUrl}/register`, payload
+      `${environment.api}/register`, payload
     ).pipe(
       tap(() => {
         this._storedEmail = payload.email;
@@ -71,7 +71,7 @@ export class AuthService {
   
   verifyOTP(payload: IAuthPayload): Observable<IAuthResponse> {
     return this._httpClient.post<IAuthResponse>(
-      `${environment.apiUrl}/verify-otp`, payload
+      `${environment.api}/verify-otp`, payload
     ).pipe(
       tap((response: IAuthResponse) => {
         this._userService.setUser(response.user);
@@ -85,7 +85,7 @@ export class AuthService {
 
   resendOTP(payload: IAuthPayload): Observable<IAuthResponse> {
     return this._httpClient.post<IAuthResponse>(
-      `${environment.apiUrl}/resend-otp`, payload
+      `${environment.api}/resend-otp`, payload
     );
   }
 
@@ -100,6 +100,6 @@ export class AuthService {
   }
 
   getPosts(): Observable<any> {
-    return this._httpClient.get(environment.apiUrl);
+    return this._httpClient.get(environment.api);
   }
 }

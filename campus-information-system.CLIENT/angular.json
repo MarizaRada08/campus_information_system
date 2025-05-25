@@ -18,7 +18,7 @@
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "baseHref": "/pages/front-page/",
-            "outputPath": "dist/campus-information-system",
+            "outputPath": "dist/index.html",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
